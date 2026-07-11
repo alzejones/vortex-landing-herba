@@ -63,7 +63,11 @@ h1{font-family:'Bebas Neue';font-size:clamp(42px,6.5vw,72px);line-height:1;
 .hero-media img{width:100%;height:100%;object-fit:cover;display:block;min-height:400px}
 
 /* PAIN SECTION */
-.pain-grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:720px;margin:0 auto}
+.pain-content{display:grid;grid-template-columns:0.85fr 1fr;gap:48px;align-items:center}
+.pain-img-wrap{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--border);
+  max-width:400px;margin:0 auto}
+.pain-img-wrap img{width:100%;display:block}
+.pain-grid{display:grid;grid-template-columns:1fr;gap:16px}
 .pain-item{display:flex;align-items:flex-start;gap:12px;padding:20px;
   background:var(--card);border:1px solid rgba(255,92,53,0.12);border-radius:12px;
   transition:.3s}
@@ -186,7 +190,7 @@ footer p{font-size:13px;color:var(--muted);line-height:1.8}
 
 /* RESPONSIVE */
 @media(max-width:968px){
-  .hero-g,.solution-content,.proof-content,.pricing-grid,.scale-block,.diet-grid{grid-template-columns:1fr;gap:32px}
+  .hero-g,.solution-content,.proof-content,.pricing-grid,.scale-block,.diet-grid,.pain-content{grid-template-columns:1fr;gap:32px}
   .price-card.featured{transform:scale(1)}
   h1{font-size:clamp(36px,8vw,56px)}
   .sec{padding:60px 0}
@@ -231,30 +235,35 @@ footer p{font-size:13px;color:var(--muted);line-height:1.8}
       <span class="tag fade-up">O PROBLEMA</span>
       <h2 class="sh fade-up">Avaliação do jeito antigo <span class="ao">não convence</span> mais</h2>
     </div>
-    <div class="pain-grid">
-      <div class="pain-item fade-up">
-        <span class="pain-icon">❌</span>
-        <p class="pain-text">Avaliação feita de cabeça, sem padrão, com erro de leitura.</p>
+    <div class="pain-content">
+      <div class="pain-img-wrap fade-up">
+        <img src="assets/dor-avaliacao-antiga.jpg" alt="Consultora Herbalife confusa olhando planilha de avaliação impressa, enquanto o colega segura outra ficha em papel">
       </div>
-      <div class="pain-item fade-up">
-        <span class="pain-icon">❌</span>
-        <p class="pain-text">Cliente que não confia no resultado — e some no meio do desafio.</p>
-      </div>
-      <div class="pain-item fade-up">
-        <span class="pain-icon">❌</span>
-        <p class="pain-text">Você decidindo "no achismo" qual produto indicar pra cada pessoa.</p>
-      </div>
-      <div class="pain-item good fade-up" style="margin-top:24px">
-        <span class="pain-icon ag">✓</span>
-        <p class="pain-text">Dado automático, direto da balança.</p>
-      </div>
-      <div class="pain-item good fade-up">
-        <span class="pain-icon ag">✓</span>
-        <p class="pain-text">Cliente vendo a própria evolução — e a projeção de onde pode chegar.</p>
-      </div>
-      <div class="pain-item good fade-up">
-        <span class="pain-icon ag">✓</span>
-        <p class="pain-text">Produto certo, indicado pelo app, na hora da avaliação.</p>
+      <div class="pain-grid">
+        <div class="pain-item fade-up">
+          <span class="pain-icon">❌</span>
+          <p class="pain-text">Avaliação feita de cabeça, sem padrão, com erro de leitura.</p>
+        </div>
+        <div class="pain-item fade-up">
+          <span class="pain-icon">❌</span>
+          <p class="pain-text">Cliente que não confia no resultado — e some no meio do desafio.</p>
+        </div>
+        <div class="pain-item fade-up">
+          <span class="pain-icon">❌</span>
+          <p class="pain-text">Você decidindo "no achismo" qual produto indicar pra cada pessoa.</p>
+        </div>
+        <div class="pain-item good fade-up" style="margin-top:24px">
+          <span class="pain-icon ag">✓</span>
+          <p class="pain-text">Dado automático, direto da balança.</p>
+        </div>
+        <div class="pain-item good fade-up">
+          <span class="pain-icon ag">✓</span>
+          <p class="pain-text">Cliente vendo a própria evolução — e a projeção de onde pode chegar.</p>
+        </div>
+        <div class="pain-item good fade-up">
+          <span class="pain-icon ag">✓</span>
+          <p class="pain-text">Produto certo, indicado pelo app, na hora da avaliação.</p>
+        </div>
       </div>
     </div>
   </div>
