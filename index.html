@@ -83,6 +83,22 @@ h1{font-family:'Bebas Neue';font-size:clamp(42px,6.5vw,72px);line-height:1;
 .screen-wide img{width:100%;display:block;aspect-ratio:unset;object-fit:contain;background:#0A0F1A}
 .screen-wide .screen-caption{text-align:center}
 
+/* BLUETOOTH SCALE BLOCK */
+.scale-block{display:grid;grid-template-columns:0.85fr 1fr;gap:48px;align-items:center}
+.scale-video-wrap{position:relative;background:var(--card);border:1px solid var(--border);
+  border-radius:20px;overflow:hidden;max-width:320px;margin:0 auto}
+.scale-video-wrap video{width:100%;display:block}
+.scale-list{list-style:none;padding:0}
+.scale-list li{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border);
+  font-size:15px;line-height:1.6}
+.scale-list li:last-child{border-bottom:none}
+.scale-list .num{flex-shrink:0;width:28px;height:28px;border-radius:50%;
+  background:rgba(0,217,255,0.1);border:1px solid var(--cyan);color:var(--cyan);
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+.scale-tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.scale-tag-row span{font-size:12px;color:var(--muted);border:1px solid var(--border);
+  padding:5px 12px;border-radius:99px}
+
 /* SOLUTION SECTION */
 .solution-content{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
 .video-container{position:relative;background:var(--card);border:1px solid var(--border);
@@ -158,7 +174,7 @@ footer p{font-size:13px;color:var(--muted);line-height:1.8}
 
 /* RESPONSIVE */
 @media(max-width:968px){
-  .hero-g,.solution-content,.proof-content,.pricing-grid{grid-template-columns:1fr;gap:32px}
+  .hero-g,.solution-content,.proof-content,.pricing-grid,.scale-block{grid-template-columns:1fr;gap:32px}
   .price-card.featured{transform:scale(1)}
   h1{font-size:clamp(36px,8vw,56px)}
   .sec{padding:60px 0}
@@ -263,6 +279,34 @@ footer p{font-size:13px;color:var(--muted);line-height:1.8}
       <div class="screen-caption"><strong>Vortex Body Twin</strong>6 visões do corpo, incluindo projeção de 90 dias. Exclusivo Escalando.</div>
     </div>
     <p class="screen-badge fade-up">Sobe na balança. O app faz o resto — sem você digitar nada.</p>
+  </div>
+</section>
+
+<!-- BLUETOOTH SCALE -->
+<section class="sec sec-dark">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:48px">
+      <span class="tag fade-up">SEM DIGITAR NADA</span>
+      <h2 class="sh fade-up">Sobe na balança. <span class="ac">O dado já entra sozinho.</span></h2>
+      <p class="sub fade-up" style="margin:16px auto 0">Conecta a balança Bluetooth uma vez. Depois disso, cada pesagem vai direto pra ficha do cliente — sem você digitar um número sequer.</p>
+    </div>
+    <div class="scale-block">
+      <div class="scale-video-wrap fade-up">
+        <video src="assets/balanca-bluetooth.mp4" poster="assets/balanca-bluetooth-poster.jpg" autoplay muted loop playsinline></video>
+      </div>
+      <div class="fade-up">
+        <ul class="scale-list">
+          <li><span class="num">1</span>Conecta a balança Bluetooth ao app — uma vez só, fica salva.</li>
+          <li><span class="num">2</span>Cliente sobe na balança. O peso aparece na tela na hora.</li>
+          <li><span class="num">3</span>O dado já vai direto pra ficha de cadastro/avaliação — zero digitação, zero erro de leitura.</li>
+        </ul>
+        <div class="scale-tag-row">
+          <span>Compatível com Xiaomi</span>
+          <span>OKOK</span>
+          <span>Fitdays</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
