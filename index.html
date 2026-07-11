@@ -60,6 +60,8 @@ h1{font-family:'Bebas Neue';font-size:clamp(42px,6.5vw,72px);line-height:1;
 .placeholder svg{width:64px;height:64px;margin-bottom:16px;opacity:0.4}
 .placeholder strong{display:block;font-size:16px;color:var(--cyan);margin-bottom:8px}
 
+.hero-media img{width:100%;height:100%;object-fit:cover;display:block;min-height:400px}
+
 /* PAIN SECTION */
 .pain-grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:720px;margin:0 auto}
 .pain-item{display:flex;align-items:flex-start;gap:12px;padding:20px;
@@ -98,6 +100,9 @@ h1{font-family:'Bebas Neue';font-size:clamp(42px,6.5vw,72px);line-height:1;
 .scale-tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
 .scale-tag-row span{font-size:12px;color:var(--muted);border:1px solid var(--border);
   padding:5px 12px;border-radius:99px}
+.avatar-video-wrap{position:relative;background:var(--card);border:1px solid var(--border);
+  border-radius:20px;overflow:hidden;max-width:320px;margin:0 auto}
+.avatar-video-wrap video{width:100%;display:block}
 
 /* SOLUTION SECTION */
 .solution-content{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
@@ -206,11 +211,7 @@ footer p{font-size:13px;color:var(--muted);line-height:1.8}
         <p class="hero-secondary fade-up">Prefere tirar dúvidas antes? <a href="https://wa.me/5521999999999" target="_blank">Fale no WhatsApp</a></p>
       </div>
       <div class="hero-media fade-up">
-        <div class="placeholder">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-          <strong>Vídeo Hero (6–10s)</strong>
-          <span>Consultor(a) mostrando Body Twin no celular para cliente em atendimento real</span>
-        </div>
+        <img src="assets/hero.jpg" alt="Consultora e consultor Herbalife analisando juntos o gráfico de evolução de % Gordura e % Músculo de um cliente no Vortex Primus">
       </div>
     </div>
   </div>
@@ -247,6 +248,29 @@ footer p{font-size:13px;color:var(--muted);line-height:1.8}
       <div class="pain-item good fade-up">
         <span class="pain-icon ag">✓</span>
         <p class="pain-text">Produto certo, indicado pelo app, na hora da avaliação.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVATAR CORPORAL -->
+<section class="sec">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:48px">
+      <span class="tag fade-up">PROVA VISUAL</span>
+      <h2 class="sh fade-up">Seu cliente <span class="ac">vê</span> a própria evolução</h2>
+      <p class="sub fade-up" style="margin:16px auto 0">O avatar corporal evolui automaticamente com cada avaliação. É a diferença entre "eu acho que melhorei" e "eu VEJO que melhorei".</p>
+    </div>
+    <div class="scale-block">
+      <div class="avatar-video-wrap fade-up">
+        <video src="assets/avatar-evolution.mp4" poster="assets/avatar-evolution-poster.jpg" autoplay muted loop playsinline></video>
+      </div>
+      <div class="fade-up">
+        <ul class="scale-list">
+          <li><span class="num">1</span>Cada avaliação atualiza o avatar automaticamente — nenhum trabalho manual seu.</li>
+          <li><span class="num">2</span>Cliente classifica visualmente a própria evolução de % de gordura corporal.</li>
+          <li><span class="num">3</span>Prova visual que motiva o cliente a continuar — e a confiar no seu trabalho.</li>
+        </ul>
       </div>
     </div>
   </div>
