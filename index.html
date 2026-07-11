@@ -69,6 +69,20 @@ h1{font-family:'Bebas Neue';font-size:clamp(42px,6.5vw,72px);line-height:1;
 .pain-icon{font-size:24px;flex-shrink:0;margin-top:2px}
 .pain-text{font-size:15px;line-height:1.7;color:#E2EAF4}
 
+/* APP SCREENS SECTION */
+.screens-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:8px}
+.screen-card{background:var(--card);border:1px solid var(--border);border-radius:14px;
+  overflow:hidden;display:flex;flex-direction:column}
+.screen-card img{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;background:#0A0F1A}
+.screen-card .placeholder{aspect-ratio:9/16;padding:20px}
+.screen-caption{padding:14px 16px;font-size:13px;line-height:1.5;color:var(--muted)}
+.screen-caption strong{display:block;color:#E2EAF4;font-size:14px;margin-bottom:4px}
+.screen-badge{text-align:center;font-size:11px;letter-spacing:1px;text-transform:uppercase;
+  color:var(--cyan);margin-top:32px}
+.screen-wide{margin-top:20px}
+.screen-wide img{width:100%;display:block;aspect-ratio:unset;object-fit:contain;background:#0A0F1A}
+.screen-wide .screen-caption{text-align:center}
+
 /* SOLUTION SECTION */
 .solution-content{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
 .video-container{position:relative;background:var(--card);border:1px solid var(--border);
@@ -153,6 +167,7 @@ footer p{font-size:13px;color:var(--muted);line-height:1.8}
 }
 @media(max-width:640px){
   .wrap{padding:0 16px}
+  .screens-grid{grid-template-columns:1fr!important}
   .btn{font-size:14px;padding:12px 24px}
   h2.sh{font-size:clamp(32px,7vw,48px)}
   .hero-ctas{flex-direction:column;width:100%}
@@ -218,6 +233,36 @@ footer p{font-size:13px;color:var(--muted);line-height:1.8}
         <p class="pain-text">Produto certo, indicado pelo app, na hora da avaliação.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- APP SCREENS (prova de tecnologia real) -->
+<section class="sec">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:40px">
+      <span class="tag fade-up">DIRETO DO APP</span>
+      <h2 class="sh fade-up">Não é conceito. <span class="ac">É tela real.</span></h2>
+      <p class="sub fade-up" style="margin:16px auto 0">Sem mockup, sem ilustração genérica. Isso é o que o seu cliente vê no celular dele.</p>
+    </div>
+    <div class="screens-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="screen-card fade-up">
+        <img src="assets/avatar-screen.jpg" alt="Tela real do Vortex Primus: gráfico mostrando % Gordura caindo e % Músculo subindo ao longo do tempo" loading="lazy">
+        <div class="screen-caption"><strong>Avatar Corporal</strong>Gordura caindo, músculo subindo — em gráfico automático.</div>
+      </div>
+      <div class="screen-card fade-up">
+        <img src="assets/composicao.jpg" alt="Tela do Vortex Primus: composição corporal completa com gordura, massa muscular, idade metabólica e gordura visceral" loading="lazy">
+        <div class="screen-caption"><strong>Composição Completa</strong>Gordura, massa muscular, idade metabólica e gordura visceral, tudo numa tela.</div>
+      </div>
+      <div class="screen-card fade-up">
+        <img src="assets/medidas.jpg" alt="Tela do Vortex Primus: evolução de medidas corporais ao longo do tempo" loading="lazy">
+        <div class="screen-caption"><strong>Evolução de Medidas</strong>Histórico completo — o centímetro que sumiu fica registrado pra sempre.</div>
+      </div>
+    </div>
+    <div class="screen-card screen-wide fade-up">
+      <img src="assets/body-twin.jpg" alt="Vortex Body Twin — escaneamento corporal avançado com 6 visões: foto real, sistema muscular, mapa térmico de gordura, gordura visceral, projeção 90 dias e mapa de gordura" loading="lazy">
+      <div class="screen-caption"><strong>Vortex Body Twin</strong>6 visões do corpo, incluindo projeção de 90 dias. Exclusivo Escalando.</div>
+    </div>
+    <p class="screen-badge fade-up">Sobe na balança. O app faz o resto — sem você digitar nada.</p>
   </div>
 </section>
 
