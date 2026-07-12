@@ -91,7 +91,7 @@ h1{font-family:'Bebas Neue';font-size:clamp(42px,6.5vw,72px);line-height:1;
 .screens-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:8px}
 .screen-card{background:var(--card);border:1px solid var(--border);border-radius:14px;
   overflow:hidden;display:flex;flex-direction:column}
-.screen-card img{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;background:#0A0F1A}
+.screen-card img{width:100%;display:block;aspect-ratio:4/5;object-fit:contain;background:#0A0F1A}
 .screen-card .placeholder{aspect-ratio:9/16;padding:20px}
 .screen-caption{padding:14px 16px;font-size:13px;line-height:1.5;color:var(--muted)}
 .screen-caption strong{display:block;color:#E2EAF4;font-size:14px;margin-bottom:4px}
@@ -117,7 +117,7 @@ h1{font-family:'Bebas Neue';font-size:clamp(42px,6.5vw,72px);line-height:1;
 .scale-tag-row span{font-size:12px;color:var(--muted);border:1px solid var(--border);
   padding:5px 12px;border-radius:99px}
 .avatar-video-wrap{position:relative;background:var(--card);border:1px solid var(--border);
-  border-radius:20px;overflow:hidden;max-width:320px;margin:0 auto}
+  border-radius:20px;overflow:hidden;max-width:420px;margin:0 auto}
 .avatar-video-wrap video{width:100%;display:block}
 .diet-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:8px}
 .diet-card{text-align:center}
@@ -212,6 +212,9 @@ footer p{font-size:13px;color:var(--muted);line-height:1.8}
 @media(max-width:640px){
   .wrap{padding:0 16px}
   .screens-grid{grid-template-columns:1fr!important}
+  .screen-card{max-width:280px;margin:0 auto}
+  .screen-card img{aspect-ratio:4/5}
+  .screen-wide{max-width:340px;margin:20px auto 0}
   .btn{font-size:14px;padding:12px 24px}
   h2.sh{font-size:clamp(32px,7vw,48px)}
   .hero-ctas{flex-direction:column;width:100%}
