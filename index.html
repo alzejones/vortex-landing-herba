@@ -85,7 +85,7 @@ h1{font-family:'Bebas Neue';font-size:clamp(40px,6vw,68px);line-height:1.02;
 .hero-secondary a{color:var(--cyan);text-decoration:underline}
 .hero-media{border-radius:18px;overflow:hidden;border:1px solid var(--border);
   min-height:340px;background:var(--card)}
-.hero-media img{width:100%;height:100%;object-fit:cover;display:block;min-height:340px}
+.hero-media img,.hero-media video{width:100%;height:100%;object-fit:cover;display:block;min-height:340px}
 .trust-row{display:flex;gap:22px;flex-wrap:wrap;margin-top:28px;padding-top:24px;border-top:1px solid var(--border)}
 .trust-item{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:8px}
 .trust-item b{color:#E2EAF4;font-weight:700}
@@ -291,12 +291,9 @@ footer{padding:32px 0;text-align:center;font-size:12px;color:var(--muted);border
       </div>
     </div>
     <div class="hero-media fade-up">
-      <!-- 🎬 PENDENTE: vídeo-gancho de ~8-10s, mudo, em loop, montando cortes rápidos (2-2.5s cada)
-           dos 4 vídeos que você enviou (scan com HUD, Body Twin, dieta+produto, tela real do app).
-           Objetivo: pattern-interrupt nos 3 primeiros segundos + preview do fluxo completo.
-           Assim que reenviar os 4 arquivos, eu corto, comprimo e monto este vídeo e substituo
-           a tag <img> abaixo por <video autoplay muted loop playsinline poster="assets/hero.jpg"> -->
-      <img src="assets/hero.jpg" alt="Consultora e consultor Herbalife analisando juntos o Vortex Body Twin no tablet, com o cliente presente">
+      <video autoplay muted loop playsinline poster="assets/hero-hook-poster.jpg">
+        <source src="assets/hero-hook.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </section>
