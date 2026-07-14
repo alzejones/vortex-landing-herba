@@ -31,6 +31,19 @@ body{background:#07090F;color:#E2EAF4;font-family:'Barlow',sans-serif;font-size:
 }
 a{color:inherit;text-decoration:none}
 
+/* SCROLL PROGRESS (Zeigarnik/completion bias) */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--green));
+  width:0%;z-index:999;transition:width .1s linear}
+
+/* STICKY MOBILE CTA (recorrência de acesso à ação) */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:900;background:rgba(7,9,15,0.92);
+  backdrop-filter:blur(10px);border-top:1px solid var(--border);padding:12px 16px;
+  display:flex;gap:10px;align-items:center;transform:translateY(120%);transition:transform .35s ease}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta span{font-size:12px;color:var(--muted);flex:1;line-height:1.3}
+.sticky-cta .btn{padding:11px 20px;font-size:13px;white-space:nowrap}
+@media(min-width:900px){.sticky-cta{display:none}}
+
 /* UTILS */
 .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
 .sec{padding:90px 0}
@@ -48,8 +61,10 @@ h2.sh{font-family:'Bebas Neue';font-size:clamp(34px,5vw,58px);line-height:1.08;m
 
 .btn{display:inline-flex;align-items:center;gap:9px;font-family:'Barlow';font-weight:700;
   font-size:15px;padding:15px 30px;border-radius:10px;transition:.25s;cursor:pointer;border:none}
-.btn-fire{background:var(--green);color:#04070C;box-shadow:0 0 0 0 rgba(0,229,138,0);transition:.25s}
-.btn-fire:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 8px 24px -6px rgba(0,229,138,0.45)}
+.btn-fire{background:var(--green);color:#04070C;box-shadow:0 0 0 0 rgba(0,229,138,0.45);transition:.25s;
+  animation:pulse-cta 3.2s ease-in-out infinite}
+.btn-fire:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 8px 24px -6px rgba(0,229,138,0.45);animation:none}
+@keyframes pulse-cta{0%,100%{box-shadow:0 0 0 0 rgba(0,229,138,0.35)}50%{box-shadow:0 0 0 10px rgba(0,229,138,0)}}
 .btn-ghost{background:transparent;color:var(--cyan);border:1.5px solid var(--cyan);font-size:14px;padding:10px 24px}
 .btn-ghost:hover{background:rgba(0,217,255,0.08)}
 
@@ -242,6 +257,11 @@ footer{padding:32px 0;text-align:center;font-size:12px;color:var(--muted);border
 </style>
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="sticky-cta" id="stickyCta">
+  <span>7 dias grátis · sem cartão</span>
+  <a href="#pricing" class="btn btn-fire">Testar agora</a>
+</div>
 <header>
   <div class="wrap nav-row">
     <div class="logo">
@@ -271,6 +291,11 @@ footer{padding:32px 0;text-align:center;font-size:12px;color:var(--muted);border
       </div>
     </div>
     <div class="hero-media fade-up">
+      <!-- 🎬 PENDENTE: vídeo-gancho de ~8-10s, mudo, em loop, montando cortes rápidos (2-2.5s cada)
+           dos 4 vídeos que você enviou (scan com HUD, Body Twin, dieta+produto, tela real do app).
+           Objetivo: pattern-interrupt nos 3 primeiros segundos + preview do fluxo completo.
+           Assim que reenviar os 4 arquivos, eu corto, comprimo e monto este vídeo e substituo
+           a tag <img> abaixo por <video autoplay muted loop playsinline poster="assets/hero.jpg"> -->
       <img src="assets/hero.jpg" alt="Consultora e consultor Herbalife analisando juntos o Vortex Body Twin no tablet, com o cliente presente">
     </div>
   </div>
@@ -339,7 +364,7 @@ footer{padding:32px 0;text-align:center;font-size:12px;color:var(--muted);border
       <span class="mech-node"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="7" y="2" width="10" height="20" rx="2"/><circle cx="12" cy="18" r="1"/></svg>Scan Corporal</span><span class="mech-arrow">→</span>
       <span class="mech-node"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="10" width="18" height="8" rx="2"/><path d="M7 10V7a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3"/></svg>Balança</span><span class="mech-arrow">→</span>
       <span class="mech-node"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 19h16"/><path d="M7 19V9l3-5 3 5v10"/><path d="M17 19v-6l-2-3"/></svg>Dieta + Produto</span><span class="mech-arrow">→</span>
-      <span class="mech-node"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 10l9-7 9 7"/><path d="M5 9v10h14V9"/><path d="M9 19v-6h6v6"/></svg>Fechamento</span><span class="mech-arrow">→</span>
+      <span class="mech-node"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 10l9-7 9 7"/><path d="M5 9v10h14V9"/><path d="M9 19v-6h6v6"/></svg>Fechamento · Pix/Cartão</span><span class="mech-arrow">→</span>
       <span class="mech-node"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Produtividade</span>
     </div>
   </div>
@@ -384,8 +409,8 @@ footer{padding:32px 0;text-align:center;font-size:12px;color:var(--muted);border
         <div class="journey-num fade-up">3</div>
         <div class="fade-up">
           <div class="journey-eyebrow">Passo 3 — A Receita</div>
-          <h3 class="journey-title">Cardápio da semana pronto — com o produto Herbalife já dentro dele.</h3>
-          <p class="journey-body">O app cruza a avaliação com o objetivo do cliente e monta a dieta sozinho. Cada refeição já vem com o Shake, o Chá ou o NutreV certo — sem achismo, sem você montar nada manualmente.</p>
+          <h3 class="journey-title">Cardápio da semana pronto — sem passar fome, com o produto Herbalife já dentro dele.</h3>
+          <p class="journey-body">O app cruza a avaliação com o objetivo do cliente e monta a dieta sozinho: receitas simples, com ingrediente fácil de achar e sabor de verdade — nada de prato sem graça. Cada refeição já vem com o Shake, o Chá ou o NutreV certo. E o cliente acompanha o dado semana a semana, com a projeção de onde pode chegar se continuar — é isso que dá segurança pra ele não abandonar no meio do caminho.</p>
           <div class="journey-media">
             <div class="media-item"><video src="assets/dieta-automatica.mp4" poster="assets/dieta-automatica-poster.jpg" autoplay muted loop playsinline></video></div>
             <div class="media-item"><video src="assets/produtos-indicados.mp4" poster="assets/produtos-indicados-poster.jpg" autoplay muted loop playsinline></video></div>
@@ -491,11 +516,12 @@ footer{padding:32px 0;text-align:center;font-size:12px;color:var(--muted);border
     <div class="center" style="max-width:640px;margin-bottom:24px">
       <span class="tag fade-up">OFERTA</span>
       <h2 class="sh fade-up">Escolha o plano que <span class="ac">escala</span> com você</h2>
+      <p class="sub fade-up center">R$14,90/mês custa menos que meia avaliação avulsa — e você usa ilimitado, todo mês.</p>
     </div>
     <div class="pricing-grid">
       <div class="price-card fade-up">
         <h3 class="price-name">Iniciante</h3>
-        <div class="price-amount">R$14<small>,90/mês</small></div>
+        <div class="price-amount">R$<span class="cu" data-val="14">0</span><small>,90/mês</small></div>
         <p class="price-clients">Até 99 clientes</p>
         <ul class="price-features">
           <li>Avatar de transformação</li>
@@ -508,7 +534,7 @@ footer{padding:32px 0;text-align:center;font-size:12px;color:var(--muted);border
       <div class="price-card featured fade-up">
         <span class="price-badge">⭐ MAIS POPULAR</span>
         <h3 class="price-name">Avançado</h3>
-        <div class="price-amount">R$24<small>,90/mês</small></div>
+        <div class="price-amount">R$<span class="cu" data-val="24">0</span><small>,90/mês</small></div>
         <p class="price-clients">Até 299 clientes</p>
         <ul class="price-features">
           <li>Tudo do Iniciante +</li>
@@ -521,7 +547,7 @@ footer{padding:32px 0;text-align:center;font-size:12px;color:var(--muted);border
       <div class="price-card fade-up">
         <span class="price-badge" style="background:var(--cyan);color:#04070C">🚀 ESCALANDO</span>
         <h3 class="price-name">Escalando</h3>
-        <div class="price-amount">R$39<small>,90/mês</small></div>
+        <div class="price-amount">R$<span class="cu" data-val="39">0</span><small>,90/mês</small></div>
         <p class="price-clients">Clientes ilimitados</p>
         <ul class="price-features">
           <li>Tudo do Avançado +</li>
@@ -615,6 +641,48 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
     });
   });
+
+  /* SCROLL PROGRESS BAR — feedback contínuo de avanço (efeito Zeigarnik) */
+  const bar=document.getElementById('scrollProgress');
+  window.addEventListener('scroll',()=>{
+    const h=document.documentElement;
+    const pct=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+    if(bar) bar.style.width=pct+'%';
+  },{passive:true});
+
+  /* STICKY CTA — some no hero, aparece depois, some de novo perto do preço/CTA final */
+  const stickyCta=document.getElementById('stickyCta');
+  const heroEl=document.querySelector('.hero');
+  const pricingEl=document.getElementById('pricing');
+  if(stickyCta && heroEl){
+    window.addEventListener('scroll',()=>{
+      const heroBottom=heroEl.getBoundingClientRect().bottom;
+      const pricingTop=pricingEl?pricingEl.getBoundingClientRect().top:9999;
+      const pastHero=heroBottom<0;
+      const nearPricing=pricingTop<window.innerHeight*0.6;
+      stickyCta.classList.toggle('show', pastHero && !nearPricing);
+    },{passive:true});
+  }
+
+  /* CONTADOR ANIMADO NOS PREÇOS — micro-recompensa visual ao entrar na tela */
+  const counters=document.querySelectorAll('.cu');
+  const cObs=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting) return;
+      const el=entry.target;
+      const target=parseFloat(el.dataset.val);
+      let start=0; const dur=900; const t0=performance.now();
+      function step(t){
+        const p=Math.min((t-t0)/dur,1);
+        const eased=1-Math.pow(1-p,3);
+        el.textContent=Math.round(eased*target);
+        if(p<1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      cObs.unobserve(el);
+    });
+  },{threshold:.5});
+  counters.forEach(el=>cObs.observe(el));
 });
 </script>
 </body>
