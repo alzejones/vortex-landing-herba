@@ -195,6 +195,26 @@ h1{font-family:'Bebas Neue';font-size:clamp(40px,6vw,68px);line-height:1.02;
 
 /* PRICING */
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+
+/* FEATURE BLOCKS (Protocolo Reset / Relatórios / Metas) */
+.feat-block{max-width:1000px;margin:0 auto 64px}
+.feat-block:last-child{margin-bottom:0}
+.feat-head{max-width:640px;margin:0 auto 28px;text-align:center}
+.feat-eyebrow{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1px;color:var(--green);
+  background:rgba(0,229,138,0.08);border:1px solid rgba(0,229,138,0.25);padding:5px 14px;border-radius:99px;margin-bottom:14px}
+.feat-title{font-family:'Bebas Neue';font-size:clamp(24px,4vw,34px);line-height:1.1;margin-bottom:12px}
+.feat-body{font-size:15px;color:var(--muted);line-height:1.7}
+.feat-carousel{max-width:900px;margin:0 auto}
+.feat-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;padding:4px 4px 12px;justify-content:flex-start}
+.feat-track .f-card{scroll-snap-align:center;flex:0 0 auto}
+@media(min-width:900px){.feat-track{justify-content:center;flex-wrap:wrap;overflow:visible}}
+.feat-track .f-card{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  overflow:hidden;flex:0 0 210px;width:210px;max-width:210px}
+.feat-track .f-card img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;object-position:top;background:#0A0F1A}
+.feat-track .f-cap{font-size:12px;color:var(--muted);padding:10px 12px;text-align:center}
+.feat-track .f-card.wide{flex-basis:260px;width:260px;max-width:260px}
+.feat-track .f-card.wide img{aspect-ratio:1/1;object-fit:cover;object-position:center}
 .price-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;
   text-align:center;position:relative}
 .price-card.featured{border-color:var(--cyan);transform:scale(1.04);background:linear-gradient(180deg,rgba(0,217,255,0.05),var(--card))}
@@ -500,6 +520,65 @@ footer{padding:32px 0;text-align:center;font-size:12px;color:var(--muted);border
           <span>🏋️ CrossTraining Instructor</span>
           <span>📍 MyBox Irajá · Ribeirão Preto</span>
           <span>📱 Testado com clientes reais</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROTINA AUTOMATIZADA (NOVO) -->
+<section class="sec">
+  <div class="wrap">
+    <div class="center" style="max-width:680px;margin-bottom:56px">
+      <span class="tag fade-up">NOVO NO VORTEX</span>
+      <h2 class="sh fade-up">Sua rotina inteira automatizada — <span class="ac">não só a avaliação</span></h2>
+      <p class="sub fade-up">Enquanto o Vortex vende, cobra e mostra o número, você fica livre pra fazer o que só você sabe fazer: atender bem quem já confiou em você.</p>
+    </div>
+
+    <!-- Bloco 1: Protocolo Reset -->
+    <div class="feat-block">
+      <div class="feat-head">
+        <span class="feat-eyebrow fade-up">VENDA E ACOMPANHAMENTO AUTOMÁTICO</span>
+        <h3 class="feat-title fade-up">O Protocolo Reset se vende, agenda e cobra sozinho</h3>
+        <p class="feat-body fade-up">Fecha o Kit Reset direto no app — e o Vortex assume os 5 dias de acompanhamento: manda a mensagem certa em cada etapa, avisa quando o cliente está atrasado, e você só aprova ou pula. Chega de caderno com data de início rabiscada a caneta.</p>
+      </div>
+      <div class="feat-carousel">
+        <div class="feat-track">
+          <div class="f-card wide fade-up"><img src="assets/reset-marketing.jpg" alt="Protocolo Emagrecimento Reset 5 dias com produtos Herbalife" loading="lazy"></div>
+          <div class="f-card fade-up"><img src="assets/reset-venda.jpg" alt="Tela de nova venda do Kit Reset básico no Vortex Primus" loading="lazy"><p class="f-cap">Fecha a venda em segundos</p></div>
+          <div class="f-card fade-up"><img src="assets/reset-data.jpg" alt="Tela de escolha da data de início do Protocolo Reset" loading="lazy"><p class="f-cap">Define a data de início</p></div>
+          <div class="f-card fade-up"><img src="assets/reset-fila.jpg" alt="Fila de mensagens automáticas de acompanhamento do Protocolo Reset, com aviso de atraso" loading="lazy"><p class="f-cap">Cobra o próximo passo por você</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloco 2: Relatórios -->
+    <div class="feat-block">
+      <div class="feat-head">
+        <span class="feat-eyebrow fade-up">CHEGA DE PLANILHA</span>
+        <h3 class="feat-title fade-up">Sua produtividade em tempo real — com projeção de fechamento do mês</h3>
+        <p class="feat-body fade-up">Acessos, PV, faturamento e lucro: por dia, por semana, por mês. O Vortex já projeta — se você continuar nesse ritmo, é isso que fecha o mês. Não precisa mais somar nada no papel pra saber onde está.</p>
+      </div>
+      <div class="feat-carousel">
+        <div class="feat-track">
+          <div class="f-card fade-up"><img src="assets/relatorio-mensal.jpg" alt="Relatório mensal de acessos, PV e ganhos com tendência de fechamento no Vortex Primus" loading="lazy"><p class="f-cap">Fechamento do mês, projetado</p></div>
+          <div class="f-card fade-up"><img src="assets/relatorio-diario2.jpg" alt="Relatório por dia com vendas, faturamento e lucro no Vortex Primus" loading="lazy"><p class="f-cap">Lucro por venda, no detalhe</p></div>
+          <div class="f-card fade-up"><img src="assets/relatorio-diario.jpg" alt="Relatório diário com conversões e ganhos no Vortex Primus" loading="lazy"><p class="f-cap">Seu funil, dia a dia</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloco 3: Metas -->
+    <div class="feat-block">
+      <div class="feat-head">
+        <span class="feat-eyebrow fade-up">METAS QUE SE ATUALIZAM SOZINHAS</span>
+        <h3 class="feat-title fade-up">Agendou, atendeu, vendeu — o Vortex já avisa se a meta está em risco</h3>
+        <p class="feat-body fade-up">Agendamentos, avaliações realizadas, novos clientes, clientes que voltam a comprar: tudo comparado com a sua meta do mês, com aviso claro assim que o ritmo não é suficiente pra chegar lá.</p>
+      </div>
+      <div class="feat-carousel">
+        <div class="feat-track">
+          <div class="f-card fade-up"><img src="assets/metas-atendimento.jpg" alt="Tela de metas de atendimento com agendamentos e avaliações realizadas no Vortex Primus" loading="lazy"><p class="f-cap">Meta de atendimento, no risco certo</p></div>
+          <div class="f-card fade-up"><img src="assets/metas-comercial.jpg" alt="Tela de metas comerciais com novos clientes e clientes repetidores no Vortex Primus" loading="lazy"><p class="f-cap">Novos clientes e recompra</p></div>
         </div>
       </div>
     </div>
