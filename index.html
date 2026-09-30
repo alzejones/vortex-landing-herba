@@ -19,7 +19,7 @@
 <meta name="twitter:description" content="O app que também vende por você: avaliação automática, dieta com produto certo e fechamento de venda — tudo no mesmo fluxo."/>
 <meta name="twitter:image" content="https://vortex-landing-herba.vercel.app/assets/hero.jpg"/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='10' fill='%2307090F' stroke='%2300D9FF' stroke-width='2'/%3E%3Cpath d='M12 2a10 10 0 0 1 7 17' stroke='%2300D9FF' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -282,6 +282,47 @@ footer{padding:32px 0;text-align:center;font-size:12px;color:var(--muted);border
   .mech-flow{padding:20px 16px}
   .mech-node{font-size:12px;padding:8px 12px}
 }
+
+/* ÍNDICE DE RECURSOS */
+.recursos-wrap{max-width:1140px;margin:0 auto}
+.recursos-header{text-align:center;margin-bottom:56px}
+.recursos-subtitle{font-size:18px;color:var(--muted);line-height:1.75;max-width:840px;margin:20px auto 0}
+.recursos-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:32px}
+.recurso-item{background:#141618;border:1px solid #25292d;border-left:3px solid var(--purple);border-radius:14px;padding:24px;
+  position:relative;transition:.3s}
+.recurso-item:hover{transform:translateY(-2px);border-color:var(--cyan)}
+.recurso-item.highlight{grid-column:1/-1;padding:28px;background:linear-gradient(135deg,rgba(191,61,251,0.06),rgba(0,217,255,0.04))}
+.recurso-num{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;color:var(--cyan);
+  position:absolute;top:16px;left:-8px;background:#0D0D0D;border:1.5px solid var(--cyan);
+  border-radius:6px;padding:2px 8px;z-index:2}
+.recurso-num.highlight{color:var(--purple);border-color:var(--purple)}
+.recurso-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:17px;line-height:1.4;
+  margin-bottom:10px;color:#ECEFF1}
+.recurso-desc{font-size:14px;color:#8E979E;line-height:1.65}
+.recurso-img-wrap{margin-top:18px;border:1px solid #25292d;border-radius:10px;overflow:hidden}
+.recurso-img-wrap img{width:100%;max-width:420px;display:block}
+.recurso-days{display:flex;gap:10px;margin-top:14px;margin-bottom:14px}
+.day-badge{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:4px 10px;
+  border:1.5px solid var(--cyan);color:var(--cyan);border-radius:6px;background:#0D0D0D}
+.day-badge.done::after{content:' concluído';font-weight:400;opacity:.8}
+.grupos-container{margin-top:48px}
+.grupo{margin-bottom:52px}
+.grupo-header{margin-bottom:24px}
+.grupo-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:#8E979E;margin-bottom:8px}
+.grupo-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(22px,3vw,28px);
+  line-height:1.25;color:#ECEFF1}
+.hud-corners{position:relative}
+.hud-corners::before,.hud-corners::after{content:'';position:absolute;width:20px;height:20px;border:2px solid;pointer-events:none}
+.hud-corners::before{top:-8px;left:-8px;border-right:0;border-bottom:0;border-color:var(--cyan)}
+.hud-corners::after{bottom:-8px;right:-8px;border-left:0;border-top:0;border-color:var(--purple)}
+.recursos-footer{text-align:center;padding-top:32px;border-top:1px solid #25292d}
+.recursos-footer-text{font-size:14px;color:#8E979E;margin-top:12px}
+@media(max-width:768px){
+  .recursos-grid{grid-template-columns:1fr}
+  .recurso-item.highlight{grid-column:auto}
+  .grupo-title{font-size:clamp(20px,5vw,24px)}
+}
 </style>
 </head>
 <body>
@@ -322,6 +363,202 @@ footer{padding:32px 0;text-align:center;font-size:12px;color:var(--muted);border
       <video autoplay muted loop playsinline poster="assets/hero-hook-poster.jpg">
         <source src="assets/hero-hook.mp4" type="video/mp4">
       </video>
+    </div>
+  </div>
+</section>
+
+<!-- ÍNDICE DE RECURSOS -->
+<section class="sec">
+  <div class="wrap recursos-wrap">
+    <div class="recursos-header">
+      <span class="tag fade-up">Para consultores e treinadores</span>
+      <h2 class="sh fade-up">O cliente que some é uma venda fácil que você perde. <span class="ac">O Vortex avisa antes.</span></h2>
+      <p class="recursos-subtitle fade-up">Alerta para reposição de produtos do cliente, protocolos de vendas e acompanhamento, clientes fazendo pedidos antecipados de Shake, Hype Drink e Reset, avaliações e metas da equipe no mesmo app. Você cuida das pessoas; o Vortex lembra do resto.</p>
+    </div>
+
+    <!-- Itens em destaque: 01 e 02 -->
+    <div class="recursos-grid fade-up">
+      <div class="recurso-item highlight hud-corners">
+        <span class="recurso-num highlight">01</span>
+        <h3 class="recurso-title">Alerta de Reposição de Produtos</h3>
+        <p class="recurso-desc">O Vortex avisa quando o produto do seu cliente está perto de acabar. Você chama na hora certa, antes que ele desista ou compre de outro.</p>
+      </div>
+
+      <div class="recurso-item highlight hud-corners">
+        <span class="recurso-num highlight">02</span>
+        <h3 class="recurso-title">Protocolo de 5 dias no piloto automático</h3>
+        <p class="recurso-desc">Fechou a venda do kit, o Vortex acompanha os 5 dias: mostra no painel o dia de cada cliente e envia no WhatsApp a mensagem do dia, escrita do seu jeito.</p>
+        <div class="recurso-days">
+          <span class="day-badge done">D1</span>
+          <span class="day-badge done">D2</span>
+          <span class="day-badge done">D3</span>
+          <span class="day-badge done">D4</span>
+          <span class="day-badge done">D5</span>
+        </div>
+        <!-- Imagem será adicionada quando disponível -->
+        <!-- <div class="recurso-img-wrap"><img src="assets/reset-5-dias.jpg" alt="Arte do Protocolo Reset de 5 dias com cinco garrafas e acompanhamento exclusivo" loading="lazy"></div> -->
+      </div>
+    </div>
+
+    <!-- Grupos de recursos -->
+    <div class="grupos-container">
+      
+      <!-- GRUPO 1 -->
+      <div class="grupo hud-corners">
+        <div class="grupo-header fade-up">
+          <div class="grupo-eyebrow">Recompra e rotina automáticas</div>
+          <h3 class="grupo-title">Pare de perder vendas</h3>
+        </div>
+        <div class="recursos-grid">
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">03</span>
+            <h4 class="recurso-title">Cliente faz pedido antecipado do que vai consumir no Espaço</h4>
+            <p class="recurso-desc">O cliente escolhe os produtos e o sabor do shake pelo app. Você vê a lista e deixa tudo pronto antes de ele chegar.</p>
+          </div>
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">04</span>
+            <h4 class="recurso-title">Vendas com lucro e PV na hora</h4>
+            <p class="recurso-desc">Cada venda mostra o valor, o seu lucro e os pontos. Você sabe quanto ganhou hoje sem abrir planilha.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRUPO 2 -->
+      <div class="grupo hud-corners">
+        <div class="grupo-header fade-up">
+          <div class="grupo-eyebrow">Evolução visível mantém o cliente</div>
+          <h3 class="grupo-title">Resultado que o cliente vê</h3>
+        </div>
+        <div class="recursos-grid">
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">05</span>
+            <h4 class="recurso-title">Body Twin</h4>
+            <p class="recurso-desc">Um avatar do corpo do cliente mostra onde ele está e para onde está indo.</p>
+          </div>
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">06</span>
+            <h4 class="recurso-title">Balança Bluetooth direto no app</h4>
+            <p class="recurso-desc">A medição vai da balança para o app, sem digitar. Funciona com as balanças mais comuns.</p>
+          </div>
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">07</span>
+            <h4 class="recurso-title">Avaliação de Composição Corporal</h4>
+            <p class="recurso-desc">Peso, gordura, massa muscular, gordura visceral e idade metabólica a cada avaliação.</p>
+          </div>
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">08</span>
+            <h4 class="recurso-title">Meta de Proteína diária para o cliente</h4>
+            <p class="recurso-desc">Cada vez mais pessoas querem manter e ganhar massa muscular. O Vortex mostra quanta proteína o cliente precisa por dia, de acordo com o resultado da avaliação de bioimpedância.</p>
+          </div>
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">09</span>
+            <h4 class="recurso-title">Fotos de Antes e Depois</h4>
+            <p class="recurso-desc">A transformação registrada e pronta para mostrar.</p>
+          </div>
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">10</span>
+            <h4 class="recurso-title">Condicionamento Físico</h4>
+            <p class="recurso-desc">Gráficos de força e resistência que tornam o progresso visível.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRUPO 3 -->
+      <div class="grupo hud-corners">
+        <div class="grupo-header fade-up">
+          <div class="grupo-eyebrow">Mais confiança, indicação certa</div>
+          <h3 class="grupo-title">Atendimento de profissional</h3>
+        </div>
+        <div class="recursos-grid">
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">11</span>
+            <h4 class="recurso-title">Indicação de Suplementos</h4>
+            <p class="recurso-desc">O cliente recebe um menu de produtos de acordo com a sua necessidade e o seu objetivo, com link para pagamento na hora.</p>
+          </div>
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">12</span>
+            <h4 class="recurso-title">Plano Alimentar</h4>
+            <p class="recurso-desc">Em uma tela fácil de usar, o nutricionista ou coach monta o plano de acordo com os objetivos do cliente, com opções de produtos Herbalife e com o resultado da avaliação de bioimpedância. O cliente também pode montar as próprias refeições, dentro da meta de macronutrientes definida com o profissional.</p>
+          </div>
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">13</span>
+            <h4 class="recurso-title">Foto da refeição vira macros para ajustar o plano</h4>
+            <p class="recurso-desc">O cliente tira foto da refeição e o Vortex mostra as calorias de cada macronutriente. O nutricionista ou coach vê o resultado e ajusta o plano.</p>
+          </div>
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">14</span>
+            <h4 class="recurso-title">Plano em PDF com a sua marca</h4>
+            <p class="recurso-desc">Documento personalizado, pronto para enviar ao cliente.</p>
+          </div>
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">15</span>
+            <h4 class="recurso-title">Relatório com IA</h4>
+            <p class="recurso-desc">Os dados do cliente viram um relatório pronto para análises e planos.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRUPO 4 -->
+      <div class="grupo hud-corners">
+        <div class="grupo-header fade-up">
+          <div class="grupo-eyebrow">Metas pessoais e da equipe</div>
+          <h3 class="grupo-title">Rumo à próxima qualificação</h3>
+        </div>
+        <div class="recursos-grid">
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">16</span>
+            <h4 class="recurso-title">Metas que se recalculam sozinhas</h4>
+            <p class="recurso-desc">A meta do mês vira alvo do dia e da semana, com projeção de onde você vai chegar.</p>
+          </div>
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">17</span>
+            <h4 class="recurso-title">Monitoramento de Metas</h4>
+            <p class="recurso-desc">Veja em tempo real a tendência do fechamento do seu mês: ganhos, pontos de volume e os demais índices importantes para o seu crescimento.</p>
+          </div>
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">18</span>
+            <h4 class="recurso-title">Painel da Equipe</h4>
+            <p class="recurso-desc">Meta, previsto, realizado e tendência de cada pessoa da sua equipe.</p>
+          </div>
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">19</span>
+            <h4 class="recurso-title">Estrutura por níveis</h4>
+            <p class="recurso-desc">A equipe organizada do consultor ao presidente.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GRUPO 5 -->
+      <div class="grupo hud-corners">
+        <div class="grupo-header fade-up">
+          <div class="grupo-eyebrow">Sem instalação complicada</div>
+          <h3 class="grupo-title">Pronto para usar hoje</h3>
+        </div>
+        <div class="recursos-grid">
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">20</span>
+            <h4 class="recurso-title">Convite por WhatsApp e E-mail</h4>
+            <p class="recurso-desc">O cliente entra na plataforma em poucos toques.</p>
+          </div>
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">21</span>
+            <h4 class="recurso-title">Relatórios do Negócio</h4>
+            <p class="recurso-desc">Ganhos, acessos e convites reunidos.</p>
+          </div>
+          <div class="recurso-item fade-up">
+            <span class="recurso-num">22</span>
+            <h4 class="recurso-title">No celular e no computador</h4>
+            <p class="recurso-desc">Áreas separadas para você e para o cliente.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer da seção -->
+    <div class="recursos-footer fade-up">
+      <a href="https://vortex-primus.vercel.app/" target="_blank" class="btn btn-fire">Testar 7 dias grátis</a>
+      <p class="recursos-footer-text">22 recursos ativos</p>
     </div>
   </div>
 </section>
