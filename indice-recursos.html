@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Índice de Recursos Vortex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: seção de landing em estilo HUD. Índice numerado em 5 blocos com colchetes de scan-frame; itens 1 e 2 destacados; fecha com CTA. */
+:root{
+  --bg:#0D0D0D;
+  --surface:#141618;
+  --line:#25292d;
+  --fg:#ECEFF1;
+  --muted:#8E979E;
+  --cyan:#00D1DF;
+  --purple:#BF3DFB;
+  --f-display:"Space Grotesk",system-ui,sans-serif;
+  --f-body:"Inter",system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:15px;line-height:1.55;padding-inline:20px;padding-block:48px 64px}
+.wrap{max-width:1040px;margin:0 auto}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin:0 0 14px}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,5vw,46px);line-height:1.08;letter-spacing:-.02em;margin:0 0 16px;max-width:22ch;text-wrap:balance}
+h1 span{color:var(--cyan)}
+.lead{color:var(--muted);max-width:60ch;margin:0 0 44px;font-size:16px}
+.group{position:relative;padding:28px 22px 8px;margin-bottom:28px}
+.group::before,.group::after{content:"";position:absolute;width:18px;height:18px;border:2px solid var(--cyan);pointer-events:none}
+.group::before{top:0;left:0;border-right:0;border-bottom:0}
+.group::after{bottom:0;right:0;border-left:0;border-top:0;border-color:var(--purple)}
+.group h2{font-family:var(--f-display);font-weight:500;font-size:20px;margin:0 0 4px;text-wrap:balance}
+.group .tag{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:44px}
+li{display:grid;grid-template-columns:2.4rem minmax(0,1fr);gap:0 6px;padding:14px 0;border-top:1px solid var(--line)}
+li .n{font-family:var(--f-mono);font-size:13px;color:var(--cyan);padding-top:3px}
+li h3{font-family:var(--f-display);font-weight:500;font-size:17px;line-height:1.3;margin:0 0 4px}
+li p{margin:0;color:var(--muted);font-size:14px}
+li.hot{grid-column:1/-1;background:var(--surface);border:1px solid var(--line);border-left:2px solid var(--purple);padding:18px 18px 18px 14px;margin:10px 0}
+li.hot .n{color:var(--purple)}
+li.hot h3{font-size:19px}
+.days{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.days b{font-family:var(--f-mono);font-weight:500;font-size:12px;color:var(--fg);border:1px solid var(--cyan);padding:5px 10px;letter-spacing:.06em}
+.days b small{color:var(--muted);font-size:11px;margin-left:6px;font-weight:400}
+.shot{display:block;width:100%;max-width:420px;height:auto;margin-top:16px;border:1px solid var(--line)}
+.back{display:inline-block;font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:28px}
+.back:hover{color:var(--cyan)}
+.back:focus-visible{outline:2px solid var(--purple);outline-offset:3px}
+.cta{margin-top:12px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
+.cta a{font-family:var(--f-display);font-weight:700;font-size:16px;color:var(--bg);background:var(--cyan);padding:14px 22px;text-decoration:none}
+.cta a:focus-visible{outline:2px solid var(--purple);outline-offset:3px}
+.cta span{font-family:var(--f-mono);font-size:12px;color:var(--muted);letter-spacing:.06em}
+@media(max-width:720px){
+  ol{grid-template-columns:minmax(0,1fr)}
+  .group{padding-inline:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="index.html">← Voltar para a página inicial</a>
+  <p class="eyebrow">Para consultores e treinadores</p>
+  <h1>O cliente que some é uma venda fácil que você perde. <span>O Vortex avisa antes.</span></h1>
+  <p class="lead">Alerta para reposição de produtos do cliente, protocolos de vendas e acompanhamento, clientes fazendo pedidos antecipados de Shake, Hype Drink e Reset, avaliações e metas da equipe no mesmo app. Você cuida das pessoas; o Vortex lembra do resto.</p>
+
+  <section class="group">
+    <h2>Pare de perder vendas</h2>
+    <p class="tag">Recompra e rotina automáticas</p>
+    <ol>
+      <li class="hot"><span class="n">01</span><div><h3>Alerta de Reposição de Produtos</h3><p>O Vortex avisa quando o produto do seu cliente está perto de acabar. Você chama na hora certa, antes que ele desista ou compre de outro.</p></div></li>
+      <li class="hot"><span class="n">02</span><div><h3>Protocolo de 5 dias no piloto automático</h3><p>Fechou a venda do kit, o Vortex acompanha os 5 dias: mostra no painel o dia de cada cliente e envia no WhatsApp a mensagem do dia, escrita do seu jeito.</p>
+        <div class="days" aria-label="Cinco dias do protocolo"><b>D1</b><b>D2</b><b>D3</b><b>D4</b><b>D5<small>concluído</small></b></div>
+        <img class="shot" alt="Arte do Protocolo Reset de 5 dias com cinco garrafas e acompanhamento exclusivo" src="assets/reset-marketing.jpg"></div></li>
+      <li><span class="n">03</span><div><h3>Cliente faz pedido antecipado do que vai consumir no Espaço</h3><p>O cliente escolhe os produtos e o sabor do shake pelo app. Você vê a lista e deixa tudo pronto antes de ele chegar.</p></div></li>
+      <li><span class="n">04</span><div><h3>Vendas com lucro e PV na hora</h3><p>Cada venda mostra o valor, o seu lucro e os pontos. Você sabe quanto ganhou hoje sem abrir planilha.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="group">
+    <h2>Resultado que o cliente vê</h2>
+    <p class="tag">Evolução visível mantém o cliente</p>
+    <ol>
+      <li><span class="n">05</span><div><h3>Body Twin</h3><p>Um avatar do corpo do cliente mostra onde ele está e para onde está indo.</p></div></li>
+      <li><span class="n">06</span><div><h3>Balança Bluetooth direto no app</h3><p>A medição vai da balança para o app, sem digitar. Funciona com as balanças mais comuns.</p></div></li>
+      <li><span class="n">07</span><div><h3>Avaliação de Composição Corporal</h3><p>Peso, gordura, massa muscular, gordura visceral e idade metabólica a cada avaliação.</p></div></li>
+      <li><span class="n">08</span><div><h3>Meta de Proteína diária para o cliente</h3><p>Cada vez mais pessoas querem manter e ganhar massa muscular. O Vortex mostra quanta proteína o cliente precisa por dia, de acordo com o resultado da avaliação de bioimpedância.</p></div></li>
+      <li><span class="n">09</span><div><h3>Fotos de Antes e Depois</h3><p>A transformação registrada e pronta para mostrar.</p></div></li>
+      <li><span class="n">10</span><div><h3>Condicionamento Físico</h3><p>Gráficos de força e resistência que tornam o progresso visível.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="group">
+    <h2>Atendimento de profissional</h2>
+    <p class="tag">Mais confiança, indicação certa</p>
+    <ol>
+      <li><span class="n">11</span><div><h3>Indicação de Suplementos</h3><p>O cliente recebe um menu de produtos de acordo com a sua necessidade e o seu objetivo, com link para pagamento na hora.</p></div></li>
+      <li><span class="n">12</span><div><h3>Plano Alimentar</h3><p>Em uma tela fácil de usar, o nutricionista ou coach monta o plano de acordo com os objetivos do cliente, com opções de produtos Herbalife e com o resultado da avaliação de bioimpedância. O cliente também pode montar as próprias refeições, dentro da meta de macronutrientes definida com o profissional.</p></div></li>
+      <li><span class="n">13</span><div><h3>Foto da refeição vira macros para ajustar o plano</h3><p>O cliente tira foto da refeição e o Vortex mostra as calorias de cada macronutriente. O nutricionista ou coach vê o resultado e ajusta o plano.</p></div></li>
+      <li><span class="n">14</span><div><h3>Plano em PDF com a sua marca</h3><p>Documento personalizado, pronto para enviar ao cliente.</p></div></li>
+      <li><span class="n">15</span><div><h3>Relatório com IA</h3><p>Os dados do cliente viram um relatório pronto para análises e planos.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="group">
+    <h2>Rumo à próxima qualificação</h2>
+    <p class="tag">Metas pessoais e da equipe</p>
+    <ol>
+      <li><span class="n">16</span><div><h3>Metas que se recalculam sozinhas</h3><p>A meta do mês vira alvo do dia e da semana, com projeção de onde você vai chegar.</p></div></li>
+      <li><span class="n">17</span><div><h3>Monitoramento de Metas</h3><p>Veja em tempo real a tendência do fechamento do seu mês: ganhos, pontos de volume e os demais índices importantes para o seu crescimento.</p></div></li>
+      <li><span class="n">18</span><div><h3>Painel da Equipe</h3><p>Meta, previsto, realizado e tendência de cada pessoa da sua equipe.</p></div></li>
+      <li><span class="n">19</span><div><h3>Estrutura por níveis</h3><p>A equipe organizada do consultor ao presidente.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="group">
+    <h2>Pronto para usar hoje</h2>
+    <p class="tag">Sem instalação complicada</p>
+    <ol>
+      <li><span class="n">20</span><div><h3>Convite por WhatsApp e E-mail</h3><p>O cliente entra na plataforma em poucos toques.</p></div></li>
+      <li><span class="n">21</span><div><h3>Relatórios do Negócio</h3><p>Ganhos, acessos e convites reunidos.</p></div></li>
+      <li><span class="n">22</span><div><h3>No celular e no computador</h3><p>Áreas separadas para você e para o cliente.</p></div></li>
+    </ol>
+  </section>
+
+  <div class="cta"><a href="https://vortex-primus.vercel.app/" target="_blank">Testar 7 dias grátis</a><span>22 recursos ativos</span></div>
+</div>
+</body>
+</html>
